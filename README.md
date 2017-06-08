@@ -1,4 +1,4 @@
-![](https://github.com/whoislxy/ticker/blob/master/assets/ticker_main.gif)
+![](https://github.com/whoislxy/ticker_up/blob/master/assets/ticker_main.gif)
 
 What is Ticker?
 ===============
