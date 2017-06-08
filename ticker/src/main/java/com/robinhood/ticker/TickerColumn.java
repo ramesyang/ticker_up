@@ -1,12 +1,12 @@
 /**
  * Copyright (C) 2016 Robinhood Markets, Inc.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * <p>
  * http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -63,7 +63,7 @@ class TickerColumn {
     private int directionAdjustment;
 
     TickerColumn(char[] characterList, Map<Character, Integer> characterIndicesMap,
-            TickerDrawMetrics metrics) {
+                 TickerDrawMetrics metrics) {
         this.characterList = characterList;
         this.characterIndicesMap = characterIndicesMap;
         this.metrics = metrics;
@@ -165,8 +165,8 @@ class TickerColumn {
         // Now, using the bottom char's offset percentage and the delta we have from the
         // previous animation, we can now compute what's the actual offset of the bottom
         // character in the column relative to the baseline.
-        bottomDelta = bottomCharOffsetPercentage * charHeight * directionAdjustment
-                + additionalDelta;
+        bottomDelta = -(bottomCharOffsetPercentage * charHeight * directionAdjustment
+                + additionalDelta);
 
         // Figure out what the actual character index is in the characterList, and then
         // draw the character with the computed offset.
@@ -195,20 +195,20 @@ class TickerColumn {
 
         // Draw the corresponding top and bottom characters if applicable
         drawText(canvas, textPaint, characterList, bottomCharIndex + 1,
-                bottomDelta - charHeight);
+                bottomDelta + charHeight);
         // Drawing the bottom character here might seem counter-intuitive because we've been
         // computing for the bottom character this entire time. But the bottom character
         // computed above might actually be above the baseline if we interrupted a previous
         // animation that gave us a positive additionalDelta.
         drawText(canvas, textPaint, characterList, bottomCharIndex - 1,
-                bottomDelta + charHeight);
+                bottomDelta - charHeight);
     }
 
     /**
      * @return whether the text was successfully drawn on the canvas
      */
     private boolean drawText(Canvas canvas, Paint textPaint, char[] characterList, int index,
-            float verticalOffset) {
+                             float verticalOffset) {
         if (index >= 0 && index < characterList.length) {
             canvas.drawText(characterList, index, 1, 0f, verticalOffset, textPaint);
             return true;

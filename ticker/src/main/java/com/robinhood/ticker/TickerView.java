@@ -393,7 +393,7 @@ public class TickerView extends View {
 
     /**
      * @return the current text gravity used to align the text. Should be one of the values defined
-     *         in {@link android.view.Gravity}.
+     *         in {@link Gravity}.
      */
     public int getGravity() {
         return gravity;
@@ -403,7 +403,7 @@ public class TickerView extends View {
      * Sets the gravity used to align the text.
      *
      * @param gravity the new gravity, should be one of the values defined in
-     *                {@link android.view.Gravity}.
+     *                {@link Gravity}.
      */
     public void setGravity(int gravity) {
         if (this.gravity != gravity) {
@@ -438,7 +438,7 @@ public class TickerView extends View {
     }
 
     /**
-     * Adds a custom {@link android.animation.Animator.AnimatorListener} to listen to animator
+     * Adds a custom {@link Animator.AnimatorListener} to listen to animator
      * update events used by this view.
      *
      * @param animatorListener the custom animator listener.
@@ -448,7 +448,7 @@ public class TickerView extends View {
     }
 
     /**
-     * Removes the specified custom {@link android.animation.Animator.AnimatorListener} from
+     * Removes the specified custom {@link Animator.AnimatorListener} from
      * this view.
      *
      * @param animatorListener the custom animator listener.

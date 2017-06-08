@@ -1,4 +1,4 @@
-![](https://github.com/robinhood/ticker/blob/master/assets/ticker_main.gif)
+![](https://github.com/whoislxy/ticker/blob/master/assets/ticker_main.gif)
 
 What is Ticker?
 ===============
@@ -22,7 +22,7 @@ Getting started
 Add the ticker dependency to your `build.gradle`.
 
 ```groovy
-compile 'com.robinhood.ticker:ticker:1.2.0'
+compile project(':ticker')
 ```
 
 
